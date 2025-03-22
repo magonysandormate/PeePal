@@ -1,0 +1,8 @@
+("1012 Budapest, Déli Pályaudvar", "I. kerület", "Déli Pályaudvar M", "true", 250, "18:00-06:00", 47.50025507357977, 19.025074759382747)
+("1028 Budapest, Hársakalja", "II.kerület", "Bátori László utca", true, 250, "0:00-24:00", 47.544933, 18.964085)
+("1033 Budapest, K-híd", "III. kerület", "Filatorigát", true, 250, "0:00-24:00", 47.552565, 19.048188)
+("1042 Budapest József Attila u. 58", "IV. kerület", "Újpest-központ M", false, 250, "7:00-19:00", 47.560998, 19.089109)
+("1051 Budapest, Deák Ferenc tér", "V. kerület", "Deák Ferenc tér M", false, 250, "7:00-19:00", 47.497573, 19.053831)
+("1068 Budapest, Lövölde tér 5", "VI. kerület", "Lövölde tér", false, "0:00-24:00", 47.507366, 19.071631)
+("1071 Budapest, Betlehen Gábor tér 2", "VII. kerület", "Nefelejcs utca / István utca", true, 250, "0:00-24:00", 47.503757, 19.079625)
+("1082 Budapest, Fotó utca 29", "VIII. kerület", "Corvin-negyed M", false, 250, "6:00-18:00", 47.486795, 19.074694)
