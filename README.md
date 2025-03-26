@@ -1,4 +1,4 @@
-# Budapesti Nyilvános Mosdók
+# PeePal
 
 Ez a projekt a Budapesti nyilvános mosdókat listázza ki, és egy funkciója, hogy megmutatja, melyik van a legközelebb a felhasználóhoz. A frontend React-ben, a backend pedig Laravel-ben készült.
 
