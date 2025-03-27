@@ -11,7 +11,5 @@ class WcAdatok extends Model
 
     protected $table = 'wc_adatok';
 
-    protected $fillable = [
-        'nev', 'kerulet', 'kozeli_megall', 'akadalym', 'ar', 'nyitva', 'hossz_koord', 'szel_koord', 'utvonal'
-    ];
+    protected $fillable = ['nev', 'kerulet', 'kozeli_megall', 'akadalym', 'ar', 'nyitva', 'hossz_koord', 'szel_koord', 'utvonal'];
 }
