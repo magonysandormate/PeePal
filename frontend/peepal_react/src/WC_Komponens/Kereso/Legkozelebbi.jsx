@@ -98,6 +98,7 @@ export default function LegkozelebbiMosdo() {
   // Render nearest restroom details
   if (nearestRestroom) {
     return (
+      <div className="fixed inset-0 flex justify-center items-center">
       <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 relative">
         <h1 className="text-xl font-semibold text-gray-800 mb-3">Legközelebbi mosdó</h1>
         <div className="text-gray-600 space-y-2">
@@ -126,6 +127,7 @@ export default function LegkozelebbiMosdo() {
             className="absolute bottom-10 right-10"
           />
         )}
+      </div>
       </div>
     );
   }
