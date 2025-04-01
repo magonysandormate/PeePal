@@ -4,6 +4,7 @@ import Menusor from './WC_Komponens/NavBar/Menusor';
 import { Route, Routes } from 'react-router-dom';
 import Kezdolap from './WC_Komponens/Kezdolap/Kezdolap';
 import LegkozelebbiMosdo from './WC_Komponens/Kereso/Legkozelebbi';
+import HozzaadForm from './WC_Komponens/Hozzadas/HozzaadForm';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/kereso" element={<LegkozelebbiMosdo />}/>
           <Route path="/bejelentkezes" element={<Bejelentkezes />}/>
           <Route path="/regisztracio" element={<Regisztracio />} />
+          <Route path="/hozzaadas" element={<HozzaadForm />}/>
         </Routes>
       </div>
     </>
