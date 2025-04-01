@@ -1,6 +1,6 @@
 import Bejelentkezes from './WC_Komponens/Bejel_Regisz/Bejelentkezes';
 import Regisztracio from './WC_Komponens/Bejel_Regisz/Regisztracio';
-import Menusor from './NavBar/Menusor';
+import Menusor from './WC_Komponens/NavBar/Menusor';
 import { Route, Routes } from 'react-router-dom';
 import Kezdolap from './WC_Komponens/Kezdolap/Kezdolap';
 import LegkozelebbiMosdo from './WC_Komponens/Kereso/Legkozelebbi';
