@@ -2,11 +2,11 @@ export default function HozzaadForm() {
     const ToolTip = ({children, text}) => {
         return(
             <div className="relative group">
-  {children}
-  <div className="absolute left-full transform -translate-x-1/2 bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded-md py-2 px-3 w-48 z-10 shadow-lg opacity-0 group-hover:opacity-100">
-    {text}
-  </div>
-</div>
+                {children}
+                <div className="absolute left-full transform -translate-x-1/2 bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded-md py-2 px-3 w-48 z-10 shadow-lg opacity-0 group-hover:opacity-100">
+                    {text}
+                </div>
+            </div>
 
 
         )
