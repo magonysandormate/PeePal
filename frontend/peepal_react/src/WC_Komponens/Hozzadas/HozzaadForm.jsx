@@ -77,6 +77,16 @@ export default function HozzaadForm() {
                 />
                 
 
+                <div className="flex items-center space-x-2">
+                    <label className="text-gray-700">Koordináták:</label>
+                    <ToolTip children={"❔"} text={"A koordinátákat a helyre kattintva tudja a vágólapra másolni [Jobbklikk ➡ Koordináták (pl. 41.1212, 21.3213)]"} />
+                </div>
+                <input 
+                    type="text" 
+                    placeholder="Koordináták"
+                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+
                 <button 
                     type="submit" 
                     className="w-full bg-yellow-600 text-white py-2 rounded-lg hover:bg-yellow-700 transition">

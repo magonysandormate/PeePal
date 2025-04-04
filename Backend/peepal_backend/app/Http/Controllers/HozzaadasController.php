@@ -27,22 +27,51 @@ class HozzaadasController extends Controller
             'akadalym' => 'required|boolean',
             'ar' => 'required|numeric',
             'nyitva' => 'required|string',
-            'utvonal' => 'required|string'
+            'utvonal' => 'required|string',
+            'koordinatak' => 'nullable|string'
         ]);
 
-        WcAdatok::create([
-            'nev' => $validatedData['nev'],
-            'kerulet' => $validatedData['kerulet'],
-            'kozeli_megall' => $validatedData['kozeli_megall'],
-            'akadalym' => $validatedData['akadalym'],
-            'ar' => $validatedData['ar'],
-            'nyitva' => $validatedData['nyitva'],
-            'nyitva' => $validatedData['nyitva']
-        ]);
+        try {
+            $szelesseg = null;
+            $hosszusag = null;
 
-        return response() -> json([
-            'message' => 'Sikeres rögzítés'
-        ], 201);
+            if (!empty($validatedData['koordinatak'])) {
+                $koordinatak = explode(',', $validatedData['koordinatak']);
+
+                if (count($koordinatak) == 2) {
+                    $szelesseg = trim($koordinatak[0]);
+                    $hosszusag = trim($koordinatak[1]);
+
+                    if (!is_numeric($szelesseg) || !is_numeric($hosszusag)) {
+                        return response() -> json([
+                            'message' => 'Érvénytelen a koordináták formátuma'
+                        ], 422);
+                    }
+                }
+            }
+
+            $mosdo = WcAdatok::create([
+                'nev' => $validatedData['nev'],
+                'kerulet' => $validatedData['kerulet'],
+                'kozeli_megall' => $validatedData['kozeli_megall'],
+                'akadalym' => $validatedData['akadalym'],
+                'ar' => $validatedData['ar'],
+                'nyitva' => $validatedData['nyitva'],
+                'utvonal' => $validatedData['utvonal'],
+                'szel_koord' => $szelesseg,
+                'hossz_koord' => $hosszusag
+            ]);
+    
+            return response() -> json([
+                'message' => 'Sikeres rögzítés',
+                'data' => $mosdo
+            ], 201);
+        } catch (\Exception $e) {
+            return response() -> json([
+                'message' => 'Hiba történt a mentés során',
+                'error' => $e -> getMessage()
+            ], 500);
+        }
     }
 
     /**
