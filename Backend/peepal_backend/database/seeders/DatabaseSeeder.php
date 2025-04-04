@@ -16,5 +16,9 @@ class DatabaseSeeder extends Seeder
         $this -> call([
             felhasznaloFeltoltes::class,
         ]);
+
+        $this -> call([
+            wc_adatokFeltoltes::class,
+        ]);
     }
 }
