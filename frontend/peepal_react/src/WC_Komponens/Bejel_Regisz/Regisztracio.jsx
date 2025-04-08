@@ -1,6 +1,6 @@
 export default function Regisztracio() {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="flex justify-center items-center min-h-screen bg-yellow-100">
         <form className="bg-white p-6 rounded-lg shadow-lg w-96 space-y-4">
           <h2 className="text-2xl font-bold text-center">Regisztráció</h2>
   

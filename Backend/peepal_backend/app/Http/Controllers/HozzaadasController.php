@@ -24,11 +24,11 @@ class HozzaadasController extends Controller
             'nev' => 'required|string',
             'kerulet' => 'required|string',
             'kozeli_megall' => 'required|string',
-            'akadalym' => 'required|boolean',
-            'ar' => 'required|numeric',
-            'nyitva' => 'required|string',
+            'akadalym' => 'nullable|boolean',
+            'ar' => 'nullable|numeric',
+            'nyitva' => 'nullable|string',
             'utvonal' => 'required|string',
-            'koordinatak' => 'nullable|string'
+            'koordinatak' => 'required|string'
         ]);
 
         try {

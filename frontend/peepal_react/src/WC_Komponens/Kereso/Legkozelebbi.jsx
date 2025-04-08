@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { TfiWheelchair } from "react-icons/tfi";
 import { mosdokFetch } from '../../apiFetch';
 
 // Haversine formula to calculate distance between two coordinates
@@ -118,15 +119,7 @@ export default function LegkozelebbiMosdo() {
           </a>
         </div>
         
-        {nearestRestroom.akadalym && (
-          <img 
-            width="32" 
-            height="32" 
-            src="https://img.icons8.com/ios-filled/50/wheelchair.png" 
-            alt="wheelchair" 
-            className="absolute bottom-10 right-10"
-          />
-        )}
+        {nearestRestroom.akadalym === 1 ? <TfiWheelchair className="absolute bottom-10 right-10 w-8 h-8"/> : ""}
       </div>
       </div>
     );
@@ -134,7 +127,7 @@ export default function LegkozelebbiMosdo() {
 
   // Default render (before location permission)
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center h-screen bg-yellow-100">
       <div className="bg-white p-6 rounded-lg shadow-lg w-80 space-y-4 text-center">
         <h2 className="text-xl font-bold">Helyzetmeghatározás</h2>
         <p className="text-gray-700">Engedélyezed a helyzetmeghatározást?</p>

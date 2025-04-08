@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { TfiWheelchair } from "react-icons/tfi";
 import { mosdokFetch } from "../../apiFetch";
 
 export default function Csempe() {
@@ -44,15 +45,7 @@ export default function Csempe() {
                         <p><span className="font-medium text-gray-800">Ár:</span> {mosdo.ar} Ft</p>
                         <p><span className="font-medium text-gray-800">Nyitvatartás:</span> {mosdo.nyitva}</p>
                     </div>
-                    {mosdo.akadalym && (
-                        <img 
-                            width="32" 
-                            height="32" 
-                            src="https://img.icons8.com/ios-filled/50/wheelchair.png" 
-                            alt="wheelchair" 
-                            className="absolute bottom-10 right-10"
-                        />
-                    )}
+                    {mosdo.akadalym === 1 ? <TfiWheelchair className="absolute bottom-10 right-10 w-8 h-8"/> : ""}
                     <a
                         href={mosdo.utvonal}
                         target="_blank"

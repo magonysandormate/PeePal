@@ -13,11 +13,11 @@ return new class extends Migration
             $table->string('nev', 250);
             $table->string('kerulet', 250);
             $table->string('kozeli_megall', 250);
-            $table->boolean('akadalym');
-            $table->integer('ar');
-            $table->string('nyitva', 250);
-            $table->double('hossz_koord')->nullable();
-            $table->double('szel_koord')->nullable();
+            $table->boolean('akadalym')->nullable();
+            $table->integer('ar')->nullable();
+            $table->string('nyitva', 250)->nullable();
+            $table->double('hossz_koord');
+            $table->double('szel_koord');
             $table->string('utvonal', 1000);
             $table->timestamps();
         });
