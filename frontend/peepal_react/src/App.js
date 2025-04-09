@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Kezdolap from './WC_Komponens/Kezdolap/Kezdolap';
 import LegkozelebbiMosdo from './WC_Komponens/Kereso/Legkozelebbi';
 import HozzaadForm from './WC_Komponens/Hozzadas/HozzaadForm';
+import Lablec from './WC_Komponens/Lablec/Lablec';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/hozzaadas" element={<HozzaadForm />}/>
         </Routes>
       </div>
+      <Lablec />
     </>
   );
 }

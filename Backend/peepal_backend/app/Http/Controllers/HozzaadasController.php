@@ -39,8 +39,8 @@ class HozzaadasController extends Controller
                 $koordinatak = explode(',', $validatedData['koordinatak']);
 
                 if (count($koordinatak) == 2) {
-                    $szelesseg = trim($koordinatak[0]);
-                    $hosszusag = trim($koordinatak[1]);
+                    $hosszusag = trim($koordinatak[0]);
+                    $szelesseg = trim($koordinatak[1]);
 
                     if (!is_numeric($szelesseg) || !is_numeric($hosszusag)) {
                         return response() -> json([
