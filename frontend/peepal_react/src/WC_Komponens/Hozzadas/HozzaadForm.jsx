@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function HozzaadForm() {
@@ -26,7 +26,7 @@ export default function HozzaadForm() {
             koordinatak: koordinatak
         }
 
-        fetch("http://localhost:8000/api/hozzaadas", {
+        fetch("http://192.168.0.78:8000/api/hozzaadas", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

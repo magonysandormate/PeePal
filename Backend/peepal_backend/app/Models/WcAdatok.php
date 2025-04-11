@@ -9,7 +9,23 @@ class WcAdatok extends Model
 {
     use HasFactory;
 
+    public function kerulet(){
+        return $this->belongsTo(Keruletek::class);
+    }
+
     protected $table = 'wc_adatok';
 
-    protected $fillable = ['nev', 'kerulet', 'kozeli_megall', 'akadalym', 'ar', 'nyitva', 'hossz_koord', 'szel_koord', 'utvonal'];
+    protected $fillable = [
+        'nev',
+        'kerulet_id',
+        'kozeli_megall',
+        'akadalym',
+        'ar',
+        'nyitva',
+        'hossz_koord',
+        'szel_koord',
+        'utvonal',
+        'felhasznalo_id'
+    ];
+    
 }

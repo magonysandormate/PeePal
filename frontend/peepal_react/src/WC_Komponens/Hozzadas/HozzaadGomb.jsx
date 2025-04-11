@@ -1,6 +1,5 @@
 import { Plus } from "lucide-react";
 import { Link } from "react-router-dom";
-import HozzaadForm from "./HozzaadForm";
 
 export default function HozzaadGomb() {
   return (

@@ -9,7 +9,8 @@ class WcController extends Controller
 {
     public function index()
     {
-        return response()->json(WcAdatok::all());
+        $mosdok = WcAdatok::with('kerulet')->get();
+        return response()->json($mosdok);
     }
 
     public function show($id)

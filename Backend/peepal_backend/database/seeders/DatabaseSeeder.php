@@ -14,11 +14,15 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this -> call([
-            felhasznaloFeltoltes::class,
+            FelhasznaloFeltoltes::class,
         ]);
 
         $this -> call([
-            wc_adatokFeltoltes::class,
+            KeruletekFeltoltes::class,
+        ]);
+
+        $this -> call([
+            WcAdatokFeltoltes::class,
         ]);
     }
 }

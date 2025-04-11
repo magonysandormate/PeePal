@@ -40,7 +40,7 @@ export default function Csempe() {
                 <div key={index} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 relative">
                     <h1 className="text-xl font-semibold text-gray-800 mb-3">{mosdo.nev}</h1>
                     <div className="text-gray-600 space-y-1">
-                        <p><span className="font-medium text-gray-800">Kerület:</span> {mosdo.kerulet}</p>
+                        <p><span className="font-medium text-gray-800">Kerület:</span> {mosdo.kerulet?.kerulet_nev}</p>
                         <p><span className="font-medium text-gray-800">Legközelebbi megálló:</span> {mosdo.kozeli_megall}</p>
                         <p><span className="font-medium text-gray-800">Ár:</span> {mosdo.ar} Ft</p>
                         <p><span className="font-medium text-gray-800">Nyitvatartás:</span> {mosdo.nyitva}</p>
