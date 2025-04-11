@@ -26,7 +26,7 @@ export default function HozzaadForm() {
             koordinatak: koordinatak
         }
 
-        fetch("http://192.168.0.78:8000/api/hozzaadas", {
+        fetch("http://localhost:8000/api/hozzaadas", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

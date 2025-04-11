@@ -1,6 +1,6 @@
 export async function mosdokFetch() {
     try {
-        const response = await fetch('http://192.168.0.78:8000/api/mosdok');
+        const response = await fetch('http://localhost:8000/api/mosdok');
         if (!response.ok) {
             throw new Error(`Hiba: ${response.status}`);
         }
