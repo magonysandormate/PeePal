@@ -37,7 +37,7 @@ return new class extends Migration
             $table->double('hossz_koord');
             $table->double('szel_koord');
             $table->string('utvonal', 1000);
-            $table->foreignId('felhasznalo_id')->references('id')->on('felhasznalok');
+            $table->foreignId('felhasznalo_id')->nullable()->references('id')->on('felhasznalok');
             $table->timestamps();
         });
     }

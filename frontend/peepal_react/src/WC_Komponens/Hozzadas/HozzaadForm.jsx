@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function HozzaadForm() {
@@ -23,7 +23,8 @@ export default function HozzaadForm() {
             ar: ar,
             nyitva: nyitva,
             utvonal: utvonal,
-            koordinatak: koordinatak
+            koordinatak: koordinatak,
+            felhasznalo_id: null
         }
 
         fetch("http://localhost:8000/api/hozzaadas", {
@@ -33,21 +34,33 @@ export default function HozzaadForm() {
             },
             body: JSON.stringify(wcInfo)
         })
-            .then((response) => response.json())
-            .then((newWC) => {
-                setNev("");
-                setKeruletId("");
-                setKozeli("");
-                setAkadalym(false);
-                setAr("");
-                setNyitva("");
-                setUtvonal("");
-                setKoordinatak("");
-                navigate("/");
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        .then(async (response) => {
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error("Hiba a POST kérésnél:", errorData);
+                alert("Hiba történt az adatok mentésekor.");
+                return;
+            }
+        
+            const newWC = await response.json();
+        
+            console.log("Sikeres mentés:", newWC);
+        
+            // csak siker után törlünk mindent és navigálunk
+            setNev("");
+            setKeruletId("");
+            setKozeli("");
+            setAkadalym(false);
+            setAr("");
+            setNyitva("");
+            setUtvonal("");
+            setKoordinatak("");
+            navigate("/");
+        })
+        .catch((error) => {
+            console.log("Hálózati hiba:", error);
+            alert("Nem sikerült csatlakozni a szerverhez.");
+        });
     }
     
     const ToolTip = ({children, text}) => {
@@ -83,10 +96,21 @@ export default function HozzaadForm() {
 
                 <label className="block text-gray-700">Kerület:</label>
 
-                <select name="kerulet_id">
-                    
+                <select
+                    id="kerulet"
+                    name="kerulet_id"
+                    value={kerulet_id}
+                    onChange={(event) => setKeruletId(event.target.value)}
+                >
+                    <option value="">Válassz kerületet</option>
+                    {Array.from({ length: 23 }, (_, i) => (
+                        <option key={i + 1} value={i + 1}>
+                            {i + 1}. kerület
+                        </option>
+                    ))}
                 </select>
 
+                {/* 
                 <input 
                     type="text"
                     name="kerulet"
@@ -95,6 +119,7 @@ export default function HozzaadForm() {
                     placeholder="Kerület"
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
+                */}
 
                 <label className="block text-gray-700">Legközelebbi megálló:</label>
                 <input 

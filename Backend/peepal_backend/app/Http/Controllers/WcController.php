@@ -56,7 +56,7 @@ class WcController extends Controller
                 'utvonal' => $validatedData['utvonal'],
                 'szel_koord' => $szelesseg,
                 'hossz_koord' => $hosszusag,
-                'felhasznalo_id' => $validatedData['felhasznalo_id']
+                'felhasznalo_id' => $validatedData['felhasznalo_id'] ?? null
             ]);
 
             return response()->json([

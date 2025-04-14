@@ -13,6 +13,10 @@ class WcAdatok extends Model
         return $this->belongsTo(Keruletek::class);
     }
 
+    public function felhasznalo(){
+        return $this->belongsTo(User::class);
+    }
+
     protected $table = 'wc_adatok';
 
     protected $fillable = [
