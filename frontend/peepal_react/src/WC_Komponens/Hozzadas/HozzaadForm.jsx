@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function HozzaadForm() {
     const [nev, setNev] = useState("");
-    const [kerulet, setKerulet] = useState("");
+    const [kerulet_id, setKeruletId] = useState("");
     const [kozeli_megall, setKozeli] = useState("");
     const [akadalym, setAkadalym] = useState(false);
     const [ar, setAr] = useState("");
@@ -17,7 +17,7 @@ export default function HozzaadForm() {
         event.preventDefault();
         const wcInfo = {
             nev: nev,
-            kerulet: kerulet,
+            kerulet_id: kerulet_id,
             kozeli_megall: kozeli_megall,
             akadalym: akadalym,
             ar: ar,
@@ -36,7 +36,7 @@ export default function HozzaadForm() {
             .then((response) => response.json())
             .then((newWC) => {
                 setNev("");
-                setKerulet("");
+                setKeruletId("");
                 setKozeli("");
                 setAkadalym(false);
                 setAr("");
@@ -82,10 +82,15 @@ export default function HozzaadForm() {
                 />
 
                 <label className="block text-gray-700">Kerület:</label>
+
+                <select name="kerulet_id">
+                    
+                </select>
+
                 <input 
                     type="text"
                     name="kerulet"
-                    value={kerulet} 
+                    value={kerulet_id} 
                     onChange={(event) => setKerulet(event.target.value)}
                     placeholder="Kerület"
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
