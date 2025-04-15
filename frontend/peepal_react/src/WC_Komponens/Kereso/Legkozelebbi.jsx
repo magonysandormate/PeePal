@@ -85,9 +85,9 @@ export default function LegkozelebbiMosdo() {
 
   if (nearestRestroom) {
     return (
-      <div className="fixed inset-0 flex justify-center items-center">
+      <div className="flex justify-center items-center py-10">
         <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 relative">
-          <h1 className="text-xl font-semibold text-gray-800 mb-3">Legközelebbi mosdó</h1>
+        <h1 className="text-xl font-semibold text-gray-800 mb-3">Legközelebbi mosdó</h1>
           <div className="text-gray-600 space-y-2">
             <h2 className="font-medium text-gray-800">{nearestRestroom.nev}</h2>
             <p><span className="font-medium text-gray-800">Kerület:</span> {nearestRestroom.kerulet?.kerulet_nev ?? 'Ismeretlen'}</p>
